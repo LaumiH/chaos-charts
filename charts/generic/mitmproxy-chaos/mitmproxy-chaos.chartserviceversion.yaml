@@ -1,0 +1,32 @@
+apiVersion: litmuchaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  name: mitmproxy-chaos 
+  version: 0.1.0
+  annotations:
+    categories: Kubernetes
+    support: https://kubernetes.slack.com/messages/CNXNB0ZTN
+spec:
+  displayName: mitmproxy-chaos 
+  description: |
+    Mitmproxy chaos deploys a mitmproxy pod on the specified node in order to intercept any http(s) traffic coming from the target application inside the cluster.
+    - see https://mitmproxy.org/ for more information
+    - mitmdump as the CLI implementation of mitmproxy is used
+    - the proxy runs a configured python script to reject/modify/substitute traffic coming from the target app
+    - the experiment supports fine-grained network chaos on http(s) traffic only
+  keywords: ['kubernetes', 'mitmproxy', 'proxy', 'http', 'https']
+  platforms:
+    - Minikube 
+  maturity: alpha 
+  minKubeVersion: 1.12.0
+  maintainers: ['laura-marie.henning@stud.h-da.de'] 
+  contributors: ['laura-marie.henning@stud.h-da.de'] 
+  links:
+    - name: Source Code
+      url: https://github.com/litmuschaos/litmus/tree/master/experiments/generic/mitmproxy_chaos
+    - name: Documentation
+      url: https://docs.litmuschaos.io/docs/mitmproxy-chaos/
+  icon:
+    - url: 
+      mediatype: ""
+  chaosexpcrdlink: https://raw.githubusercontent.com/litmuschaos/chaos-charts/master/charts/generic/mitmproxy-chaos/experiment.yaml
